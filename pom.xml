@@ -10,8 +10,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+<<<<<<< HEAD
 		<bootstrap.version>4.3.1</bootstrap.version>
 		<springboot.version>2.2.0.RELEASE</springboot.version>
+=======
+
+		<sonar.projectKey>touilimaher_oc-testing-java-cours</sonar.projectKey>
+		<sonar.organization>touilimaher</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+>>>>>>> p1ch6
 	</properties>
 
 	<parent>
