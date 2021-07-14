@@ -49,6 +49,8 @@ public class ConversionCalculatorTest {
 	public void gallonsToLitres_returnsEquivalentLitres() {
 		final Double actualLitres = calculatorUnderTest.gallonsToLitres(10.);
 		assertEquals(37.8541, actualLitres);
+	//	assertThat(actualLitres).isCloseTo(37.8541, withinPercentage(0.01));
+
 	}
 
 	@Test
