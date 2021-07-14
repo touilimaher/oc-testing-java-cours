@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.logging.log4j.core.Logger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,25 +18,34 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+
+@ExtendWith(LoggingExtension.class)
 public class CalculatorTest {
 
 	private static Instant startedAt;
 
 	private Calculator calculatorUnderTest;
 
+	private Logger logger;
+
+	public void setLogger(Logger logger) {
+		this.logger = logger;
+	}
+
 	@BeforeEach
 	public void initCalculator() {
-		System.out.println("Appel avant chaque test");
+		logger.info("Appel avant chaque test");
 		calculatorUnderTest = new Calculator();
 	}
 
 	@AfterEach
 	public void undefCalculator() {
-		System.out.println("Appel après chaque test");
+		logger.info("Appel après chaque test");
 		calculatorUnderTest = null;
 	}
 
